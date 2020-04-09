@@ -21,7 +21,7 @@ test('crypto.generateKeys', function(t) {
   var testHash = new Uint8Array(32).buffer; // 32 0s
   var keys = crypto.generateKeys();
 
-  t.equal(keys.public.slice(0, 3), 'STM', 'generated public key is in steem format');
+  t.equal(keys.public.slice(0, 3), 'STM', 'generated public key is in hive format');
 
   var sec = crypto.PrivateKey.from(keys.private);
   var pub = crypto.PublicKey.from(keys.public);

@@ -1,4 +1,4 @@
-sjcl.test.vector.steemitsig = [
+sjcl.test.vector.hivesig = [
   {
     "secretKey": "5JbZ2sNJd2iJ3no6xQha2q9EeguPd6q4wsHdKjmjFyozGYusFtb",
     "publicKey": "STM8g7Shaa7qnkmk1Bs7JRQFqHtb9jHHXXeU9J66RytEDKHUPKebt",

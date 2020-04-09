@@ -3,7 +3,7 @@ libcrypto
 =========
 
 A small vendoring wrapper for [sjcl](http://bitwiseshiftleft.github.io/sjcl/) with support for
-hashes and encodings required by the Steem platform.
+hashes and encodings required by the Hive platform.
 
 ## Usage
 
@@ -12,13 +12,13 @@ is excluded from your builds.
 
 Otherwise, just
 ```sh
-$ yarn install steem-crypto
+$ yarn install @hivechain/libcrypto
 ```
 
 ## API
 
 ```
-> crypto = require('@steemit/libcrypto');
+> crypto = require('@hivechain/libcrypto');
 ```
 
 ### crypto.sha256(data)
@@ -45,7 +45,7 @@ ArrayBuffer { byteLength: 20 }
 
 ### crypto.PrivateKey
 
-Provides operations over Steemit secp256k1-based ECC private keys.
+Provides operations over Hive secp256k1-based ECC private keys.
 ```
 > secretKey = crypto.PrivateKey.from('5JCDRqLdyX4W7tscyzyxav8EaqABSVAWLvfi7rdqMKJneqqwQGt')
 PrivateKey { getPublicKey: [Function], sign: [Function] }
@@ -59,7 +59,7 @@ ArrayBuffer { byteLength: 65 }
 
 ### crypto.PublicKey
 
-Provides operations over Steemit secp256k1-based ECC public keys.
+Provides operations over Hive secp256k1-based ECC public keys.
 ```
 > publicKey = crypto.PublicKey.from('STM5SKxjN1YdrFLgoPcp9KteUmNVdgE8DpTPC9sF6jbjVqP9d2Utq')
 ... 
@@ -71,7 +71,7 @@ true
 
 ### crypto.generateKeys()
 
-Generates a new pair of keys in Steem WIF format using cryptographically secure
+Generates a new pair of keys in Hive WIF format using cryptographically secure
 random number generation.
 ```
 > crypto.generateKeys()
@@ -83,7 +83,7 @@ random number generation.
 
 ### crypto.keysFromPassword(accountName, accountPassword)
 
-Given a Steemit account name and password, regenerates the derived `owner`, `posting`,
+Given a Hive account name and password, regenerates the derived `owner`, `posting`,
 `active`, and `memo` keys.
 ```
 > crypto.keysFromPassword('username', 'password')
@@ -103,18 +103,18 @@ Given a Steemit account name and password, regenerates the derived `owner`, `pos
 
 ## Requirements
 
-steem-crypto is written in Javascript as specified by 
+libcrypto is written in Javascript as specified by 
 [ECMA-262, version 5.1](https://www.ecma-international.org/ecma-262/5.1/).
 Other than its vendored copy of sjcl, it has no dependencies and never will.
 
-steem-crypto explicitly supports the following environments without polyfills:
+libcrypto explicitly supports the following environments without polyfills:
 - [Node.js](https://nodejs.com) versions 4 and up
 - Microsoft Edge (all versions)
 - Safari for macOS versions 7.1+
 - Safari for iOS versions 8+
 - Firefox, Chrome, and Opera versions 30+
 
-steem-crypto explicitly does not support the following environments:
+libcrypto explicitly does not support the following environments:
 - Opera Mini
 - Android Browser (i.e., the non-Chromium versions)
 - Microsoft Internet Explorer versions <10
