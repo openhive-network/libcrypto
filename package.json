@@ -13,7 +13,7 @@
     "test": "./scripts/build.js && ./scripts/test.js && ./scripts/test.js && tape 'test/*.test.js'"
   },
   "devDependencies": {
-    "eslint": "^4.10.0",
+    "eslint": "^4.18.2",
     "prettier": "~1.8.2",
     "tape": "^4.8.0"
   }
